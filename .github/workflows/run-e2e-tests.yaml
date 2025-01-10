@@ -11,17 +11,15 @@ jobs:
         run: npm start &
 
       - name: Install Cypress and run tests
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
         with:
-          start: npm start
           working-directory: cypress
           browser: chrome
           wait-on: 'http://localhost:3000'
           config: baseUrl=http://localhost:3000
-          wait-on-timeout: 120
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-artifacts
-          path: cypress/screenshots/*, cypress/videos/*
+          name: cypress-screenshots
+          path: cypress/screenshots
           if-no-files-found: ignore
