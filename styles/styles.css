@@ -15,6 +15,10 @@
 /* stylelint-disable no-empty-source */
 :root, .dropin-design {
   /* Adobe Commerce Dropin design tokens */
+  --color-primary: #1a428a;
+  --color-black: #000;
+  --color-light-blue: #006bb4;
+  --color-footer-icon: #c8e0fe;
   --color-brand-300: #6d6d6d;
   --color-brand-500: #454545;
   --color-brand-600: #383838;
@@ -41,9 +45,9 @@
   --color-alert-200: #ffebeb;
   --color-alert-500: #db7070;
   --color-alert-800: #c35050;
-  --color-button-active: var(--color-brand-700);
-  --color-button-focus: var(--color-neutral-400);
-  --color-button-hover: var(--color-brand-600);
+  --color-button-active: var(--color-primary);
+  --color-button-focus: var(--color-primary);
+  --color-button-hover: var(--color-neutral-50);
   --color-action-button-active: var(--color-neutral-50);
   --color-action-button-hover: var(--color-neutral-300);
   --color-opacity-16: rgb(255 255 255 / 16%);
@@ -90,8 +94,8 @@
   --spacing-huge: 120px;
   --spacing-xhuge: 144px;
   --spacing-xxhuge: 192px;
-  --type-base-font-family: roboto, roboto-fallback;
-  --type-condensed-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --type-base-font-family: 'Calibri';
+  --type-condensed-font-family: 'Calibri';
   --type-display-1-font: normal normal 300 6.0rem/7.2rem var(--type-base-font-family);
   --type-display-1-letter-spacing: 0.04em;
   --type-display-2-font: normal normal 300 4.8rem/5.6rem
@@ -100,18 +104,26 @@
   --type-display-3-font: normal normal 300 3.4rem/4rem
     var(--type-base-font-family);
   --type-display-3-letter-spacing: 0.04em;
-  --type-headline-1-font: normal normal 400 2.4rem/3.2rem var(--type-condensed-font-family);
-  --type-headline-1-letter-spacing: 0.04em;
-  --type-headline-2-default-font: normal normal 300 2.0rem/2.4rem var(--type-condensed-font-family);
-  --type-headline-2-default-letter-spacing: 0.04em;
-  --type-headline-2-strong-font: normal normal 400 2.0rem/2.4rem var(--type-condensed-font-family);
-  --type-headline-2-strong-letter-spacing: 0.04em;
-  --type-body-1-default-font: normal normal 300 1.6rem/2.4rem
+  --type-headline-1-font: normal normal normal 2.6rem/1.1 var(--type-condensed-font-family);
+  --type-headline-1-letter-spacing: 0;
+  --type-headline-2-default-font: normal normal normal 2.6rem/1.1 var(--type-condensed-font-family);
+  --type-headline-2-default-letter-spacing: 0;
+  --type-headline-3-default-font: normal normal normal 1.8rem/1.1 var(--type-condensed-font-family);
+  --type-headline-3-default-letter-spacing: 0;
+  --type-headline-4-default-font: normal normal 600 1.4rem/1.1 var(--type-condensed-font-family);
+  --type-headline-4-default-letter-spacing: 0;
+  --type-headline-5-default-font: normal normal 600 1.2rem/1.1 var(--type-condensed-font-family);
+  --type-headline-5-default-letter-spacing: 0;
+  --type-headline-6-default-font: normal normal 600 1rem/1.1 var(--type-condensed-font-family);
+  --type-headline-6-default-letter-spacing: 0;
+  --type-headline-2-strong-font: normal normal 600 2.0rem/2.4rem var(--type-condensed-font-family);
+  --type-headline-2-strong-letter-spacing: 0;
+  --type-body-1-default-font: normal normal normal 1.4rem/1.4286
     var(--type-base-font-family);
-  --type-body-1-default-letter-spacing: 0.04em;
-  --type-body-1-strong-font: normal normal 400 1.6rem/2.4rem
+  --type-body-1-default-letter-spacing: 0;
+  --type-body-1-strong-font: normal normal 600 1.4rem/1.4286
     var(--type-base-font-family);
-  --type-body-1-strong-letter-spacing: 0.04em;
+  --type-body-1-strong-letter-spacing: 0;
   --type-body-1-emphasized-font: normal normal 700 1.6rem/2.4rem
     var(--type-base-font-family);
   --type-body-1-emphasized-letter-spacing: 0.04em;
@@ -141,23 +153,10 @@
   --type-details-overline-letter-spacing: 0.16em;
 
   /* Additional tokens */
-  --type-fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono',
+  --type-fixed-font-family: 'Calibri',
     monospace;
   --background-color: var(--color-neutral-50);
   --nav-height: 6.4rem;
-}
-
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
 }
 
 html, body {
@@ -172,11 +171,12 @@ body {
   font: var(--type-body-1-default-font);
   letter-spacing: var(--type-body-1-default-letter-spacing);
   margin: 0;
-  color: var(--color-brand-700);
+  color: var(--color-black);
   background-color: var(--background-color);
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body:not(.appear) {
@@ -212,40 +212,39 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
-  line-height: 1.25;
+  margin-bottom: 2rem;
+  line-height: 1.1;
   scroll-margin: 40px;
 }
 
 h1 {
-  font: var(--type-display-1-font);
-  letter-spacing: var(--type-display-1-letter-spacing);
+  font: var(--type-headline-1-font);
+  margin-top: 0;
 }
 
 h2 {
-  font: var(--type-display-2-font);
-  letter-spacing: var(--type-display-2-letter-spacing);
+  font: var(--type-headline-2-default-font);
+  margin-top: 2.5rem;
 }
 
 h3 {
-  font: var(--type-display-3-font);
-  letter-spacing: var(--type-display-3-letter-spacing);
+  font: var(--type-headline-3-default-font);
+  margin-top: 1.5rem;
 }
 
 h4 {
-  font: var(--type-headline-1-font);
-  letter-spacing: var(--type-headline-1-letter-spacing);
+  font: var(--type-headline-4-default-font);
+  margin-top: 2rem;
 }
 
 h5 {
-  font: var(--type-headline-2-strong-font);
-  letter-spacing: var(--type-headline-2-strong-letter-spacing);
+  font: var(--type-headline-5-default-font);
+  margin-top: 2rem;
 }
 
 h6 {
-  font: var(--type-headline-2-default-font);
-  letter-spacing: var(--type-headline-2-default-letter-spacing);
+  font: var(--type-headline-6-default-font);
+  margin-top: 2rem;
 }
 
 p,
@@ -254,8 +253,13 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 1.5625em;
-  margin-bottom: 1.5625em;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+ul>li,ol>li {
+    margin-top: 0;
+    margin-bottom: 1rem
 }
 
 hr {
@@ -297,68 +301,83 @@ button {
 
 /* links */
 a:not(.dropin-design a) {
-  color: var(--color-brand-500);
+  color: var(--color-primary);
   font: var(--type-body-1-strong-font);
-  letter-spacing: var(--type-body-1-strong-letter-spacing);
-  text-decoration: none;
+  text-decoration: underline;
   word-break: break-word;
 }
 
 a:not(.dropin-design a):hover {
-  color: var(--color-brand-600);
+  color: var(--color-light-blue);
   text-decoration: underline;
 }
 
 /* buttons */
 main a.button:any-link,
 button.button {
+  background-color: var(--color-neutral-50);
+  border-radius: 0;
+  border: var(--shape-border-width-1) solid var(--color-primary);
   box-sizing: border-box;
+  color: var(--color-primary);
+  cursor: pointer;
   display: inline-block;
-  max-width: 100%;
-  margin: var(--spacing-small) 0;
-  border: var(--shape-border-width-3) solid transparent;
-  border-radius: var(--shape-border-radius-3);
-  padding: 0.5em 1.2em;
-  font: var(--type-button-2-font);
-  letter-spacing: var(--type-button-2-letter-spacing);
+  font-family: var(--type-base-font-family);
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 500;
+  letter-spacing: var(--type-button-2-letter-spacing);
   line-height: 1.25;
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 12.5px 20px;
   text-align: center;
   text-decoration: none;
-  background-color: var(--color-brand-500);
-  color: var(--color-neutral-50);
-  cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 main a.button:hover,
 main a.button:focus,
 button.button:hover,
 button.button:focus {
-  background-color: var(--color-brand-600);
+  background-color: var(--color-primary);
   cursor: pointer;
+  color: var(--color-neutral-50);
 }
 
 main a.button.disabled,
 button.button:disabled,
 button.button:disabled:hover {
-  background-color: var(--color-neutral-300);
-  cursor: unset;
+  opacity: .5;
+  cursor: default;
+  pointer-events: none
 }
 
 main a.button.secondary,
-button.button.secondary {
-  background-color: unset;
-  border: var(--shape-border-width-3) solid currentcolor;
-  color: var(--color-brand-500);
+button.button.secondary,
+.dropin-design .dropin-button {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  box-sizing: border-box;
+  color: var(--color-neutral-50);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--type-base-font-family);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.9rem;
+  padding: 12.5px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
 
 main a.button.secondary:hover,
-button.button.secondary:hover {
-  color: var(--color-brand-600);
+button.button.secondary:hover,
+.dropin-design .dropin-button:hover {
+  background-color: var(--color-neutral-50);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 main input:hover {

@@ -287,7 +287,8 @@ header nav .nav-tools {
   align-items: center;
 }
 
-header nav .nav-tools-wrapper > button {
+header nav .nav-tools-wrapper > button,
+header nav .nav-tools-wrapper > .nav-wishlist-button {
   color: var(--color-brand-700);
   background: transparent;
   padding: 10px;
@@ -295,6 +296,14 @@ header nav .nav-tools-wrapper > button {
   cursor: pointer;
   height: 40px;
   width: 40px;
+}
+
+header nav .nav-tools .nav-wishlist-button {
+  background-image: url('../../icons/heart.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: inline-block;
 }
 
 header nav .nav-tools button.nav-cart-button {
@@ -493,4 +502,17 @@ header .nav-search-input .search_autocomplete .popover-container {
 .grecaptcha-badge {
   margin-top: 20px;
   z-index: 3;
+}
+
+.auth-sign-in-form.auth-sign-in-form--small .auth-sign-in-form__form__password {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.auth-sign-in-form .auth-sign-in-form__button--forgot.dropin-button {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+    text-decoration: underline;
 }
