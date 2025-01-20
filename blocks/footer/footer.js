@@ -14,7 +14,25 @@ export default async function decorate(block) {
   // decorate footer DOM
   block.textContent = '';
   const footer = document.createElement('div');
+  footer.classList.add('wrapper');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+
+  const classes = ['footer-logo', 'footer-links', 'footer-links', 'footer-contact-links', 'social-media', 'copyright'];
+  classes.forEach((c, i) => {
+    const section = footer.children[i];
+    if (section) section.classList.add(`${c}`);
+  });
+
+  const footerLogo = footer.querySelector('.footer-logo');
+  const footerLogoLink = footerLogo.querySelector('a');
+  if (footerLogoLink) {
+    footerLogoLink.className = 'footer-logo';
+    footerLogoLink.setAttribute('title', 'Footer brand logo');
+  }
+  footerLogo.querySelector('img').setAttribute('alt', 'Footer Brand Logo');
+
+  const copyrights = footer.querySelector('.copyright');
+  block.append(copyrights);
 
   block.append(footer);
 }
