@@ -1,21 +1,119 @@
 footer {
-  background-color: var(--color-neutral-100);
-  font: var(--type-body-2-default-font);
-  letter-spacing: var(--type-body-2-default-letter-spacing);
+    background-color: var(--color-primary);
+    color: var(--color-neutral-50);
+    font: var(--type-body-2-default-font);
+    padding: 2rem;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer {
+    max-width: 1200px;
+    margin: auto;
 }
 
 footer .footer p {
-  margin: 0;
+    margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer .footer a {
+    color: var(--color-neutral-50);
+}
+
+.footer .wrapper {
+    display: flex;
+    column-gap: 20px;
+    order: 1;
+}
+
+.footer .wrapper .section {
+    flex: 1;
+}
+
+.footer .wrapper .section.footer-links {
+    max-width: 200px;
+}
+
+.footer .footer-links ul,
+.footer .social-media ul,
+.footer .footer-contact-links ul {
+    padding: 0;
+    margin: 0;
+}
+
+.footer .footer-links ul li,
+.footer .social-media ul li,
+.footer .footer-contact-links ul li {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.footer .social-media h3,
+.footer .footer-links h3,
+.footer .footer-contact-links h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.footer .icon {
+    color: var(--color-footer-icon);
+    margin-right: 15px;
+}
+
+.footer .footer-contact-links ul li {
+  display: flex;
+  width: 100%;
+}
+
+.footer .social-media ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer .social-media ul li:last-child {
+  margin-right: 0;
+}
+
+.footer .social-media .icon {
+  margin: 0;
+  filter: brightness(0) invert(1);
+}
+
+.footer .footer-logo picture {
+  filter: brightness(0) invert(1);
+  margin-bottom: 26px;
+  display: inline-block;
+}
+
+.footer.block {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer .copyright {
+  order: 2;
+  font-size: 16px;
+  line-height: 19px;
+  border-top: 1px solid #fff;
+  color: #c8e0fe;
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+}
+
+@media screen and (width >= 768px) {
+  .footer.block {
+      padding-top: 58px;
   }
+
+  .footer .copyright {
+      padding: 26px 0;
+  }
+}
+
+@media screen and (width >= 1540px) {
+  .footer-logo {
+      min-width: 421px;
+  }  
 }
