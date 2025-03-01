@@ -18,9 +18,9 @@ header nav {
   align-items: center;
   gap: 0 16px;
   margin: auto;
-  max-width: 1248px;
+  max-width: 1230px;
   height: var(--nav-height);
-  padding: 0 24px;
+  padding: 0 20px;
   font-family: var(--type-base-font-family);
 }
 
@@ -38,8 +38,6 @@ header nav[aria-expanded='true'] {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
   }
 
   header nav[aria-expanded='true'] {
@@ -515,4 +513,11 @@ header .nav-search-input .search_autocomplete .popover-container {
     border: none;
     color: var(--color-primary);
     text-decoration: underline;
+}
+
+@media (width >= 1540px) {
+  header nav {
+    max-width: 1560px;
+    padding: 0 30px;
+  }
 }
