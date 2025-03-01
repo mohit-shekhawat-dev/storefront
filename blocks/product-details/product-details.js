@@ -33,6 +33,24 @@ export default async function decorate(block) {
   const product = events._lastEvent?.['pdp/data']?.payload ?? null;
   const labels = await fetchPlaceholders();
 
+  if (product) {
+    // Find the "used_in" attribute
+    const usedInAttribute = product.attributes.find(attr => attr.id === 'used_in');
+    
+    // Extract the value
+    const usedInValue = usedInAttribute?.value ?? 'Not Available';
+    // Log the used_in value to the console
+    console.log('Used In Value:', usedInValue);
+    // Optional: Add the used_in value dynamically to the DOM
+    const fragment = document.createRange().createContextualFragment(`
+      <div class="product-details__used-in">
+        <h3>Used In:</h3>
+        <p>${usedInValue}</p>
+      </div>
+    `);
+    block.appendChild(fragment);
+  }
+
   // Layout
   const fragment = document.createRange().createContextualFragment(`
     <div class="product-details__wrapper">
@@ -105,8 +123,8 @@ export default async function decorate(block) {
 
     // Gallery (Desktop)
     pdpRendered.render(ProductGallery, {
-      controls: 'thumbnailsColumn',
-      arrows: true,
+      controls: 'thumbnailsRow',
+      arrows: false,
       peak: true,
       gap: 'small',
       loop: false,
