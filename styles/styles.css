@@ -424,19 +424,13 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: 1230px;
   margin: auto;
-  padding: 0 var(--spacing-medium);
+  padding: 0 20px;
 }
 
 main > .section:first-of-type {
   margin-top: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 var(--spacing-big);
-  }
 }
 
 /* section metadata */
@@ -512,4 +506,11 @@ body.columns main > .section:empty {
 */
 main[hidden] {
   display: none !important;
+}
+
+@media (width >= 1540px) {
+  main > .section > div {
+    max-width: 1560px;
+    padding: 0 30px;
+  }
 }
