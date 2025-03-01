@@ -79,6 +79,19 @@ function createSlide(row, slideIndex, carouselId) {
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
     column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
     slide.append(column);
+
+    if (colIdx !== 0) {
+        // Create a new child div
+        const childDiv = document.createElement('div');
+        childDiv.classList.add('carousel-slide-content-block');
+
+        while (column.firstChild) {
+          childDiv.appendChild(column.firstChild);
+        }
+        
+        column.appendChild(childDiv);
+    }
+
   });
 
   const labeledBy = slide.querySelector('h1, h2, h3, h4, h5, h6');
