@@ -62,16 +62,16 @@ const pluginContext = {
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
-  // const h1 = main.querySelector('h1');
-  // const picture = main.querySelector('picture');
+  return;
+
+  const h1 = main.querySelector('h1');
+  const picture = main.querySelector('picture');
   // eslint-disable-next-line no-bitwise
-  // if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
-  //   const section = document.createElement('div');
-  //   section.append(buildBlock('hero', { elems: [picture, h1] }));
-  //   main.prepend(section);
-  // }
-  const section = document.querySelector('.carousel-container');
-  section.classList.add('home-hero-slider');
+  if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
+    const section = document.createElement('div');
+    section.append(buildBlock('hero', { elems: [picture, h1] }));
+    main.prepend(section);
+  }
 }
 
 /**
@@ -111,6 +111,7 @@ function buildAutoBlocks(main) {
   }
 }
 
+
 /**
  * Decorate Columns Template to the main element.
  * @param {Element} main The container element
@@ -149,7 +150,7 @@ export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
-  buildAutoBlocks(main);
+  // buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
 }
@@ -254,6 +255,15 @@ async function loadEager(doc) {
 
     // Load LCP blocks
     await loadSection(main.querySelector('.section'), waitForFirstImage);
+
+    const pagePath = window.location.pathname; // Get the current page path
+    const pageClass = pagePath.replace(/\//g, '-').replace(/^-|-$/g, ''); // Convert the path to a class-friendly format
+    if (pageClass) {
+      document.body.classList.add(`page-${pageClass}`);
+    } else {
+      document.body.classList.add('page-home'); // Default class for the homepage
+    }
+
     document.body.classList.add('appear');
   }
 
