@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="86.979" height="66.5" viewBox="0 0 86.979 66.5">
+  <g id="eye_1_" data-name="eye (1)" transform="translate(0.989 -60.271)">
+    <path id="Path_73" data-name="Path 73" d="M218.522,286.024a7.5,7.5,0,1,0-7.5-7.5A7.51,7.51,0,0,0,218.522,286.024Zm0-10a2.5,2.5,0,1,1-2.5,2.5A2.5,2.5,0,0,1,218.522,276.022Z" transform="translate(-176.023 -175.002)" fill="#5fb2e4" stroke="#fff" stroke-width="1.5"/>
+    <path id="Path_74" data-name="Path 74" d="M13.208,215.56c9.649,6.841,19.778,10.457,29.292,10.457S62.143,222.4,71.792,215.56a70.988,70.988,0,0,0,11.8-10.407L85,203.519l-1.406-1.634a70.971,70.971,0,0,0-11.8-10.407c-9.65-6.841-19.779-10.457-29.292-10.457s-19.643,3.616-29.292,10.457a70.979,70.979,0,0,0-11.8,10.407L0,203.519l1.406,1.634A70.976,70.976,0,0,0,13.208,215.56Zm55.609-20.071a71.288,71.288,0,0,1,9.473,8.03,71.277,71.277,0,0,1-9.473,8.03,60.9,60.9,0,0,1-7.868,4.727,22.52,22.52,0,0,0,0-25.514A60.9,60.9,0,0,1,68.816,195.489ZM42.5,186.021a17.5,17.5,0,1,1-17.43,17.5A17.485,17.485,0,0,1,42.5,186.021Zm-18.444,4.736a22.52,22.52,0,0,0,0,25.52,60.883,60.883,0,0,1-7.868-4.727,71.294,71.294,0,0,1-9.472-8.029,71.561,71.561,0,0,1,8.9-7.606A61.926,61.926,0,0,1,24.055,190.756Z" transform="translate(0 -99.996)" fill="#5fb2e4" stroke="#fff" stroke-width="1.5"/>
+    <path id="Path_75" data-name="Path 75" d="M241.021,61.021h5v12.5h-5Z" transform="translate(-201.022)" fill="#5fb2e4" stroke="#fff" stroke-width="1.5"/>
+    <path id="Path_76" data-name="Path 76" d="M0,0H11.182V5H0Z" transform="translate(55.165 74.925) rotate(-63.435)" fill="#5fb2e4" stroke="#fff" stroke-width="1.5"/>
+    <path id="Path_77" data-name="Path 77" d="M0,0H12.5V5H0Z" transform="matrix(0.6, -0.8, 0.8, 0.6, 70.327, 84.522)" fill="#5fb2e4" stroke="#fff" stroke-width="1.5"/>
+    <path id="Path_78" data-name="Path 78" d="M0,0H5V11.182H0Z" transform="translate(20.329 67.139) rotate(-26.565)" fill="#5fb2e4" stroke="#fff" stroke-width="1.5"/>
+    <path id="Path_79" data-name="Path 79" d="M0,0H5V12.5H0Z" transform="matrix(0.8, -0.6, 0.6, 0.8, 3.171, 77.521)" fill="#5fb2e4" stroke="#fff" stroke-width="1.5"/>
+  </g>
+</svg>
